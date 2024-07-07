@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TB Detection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #ffdd99, #99ccff);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        p.error {
+            color: red;
+            margin-top: 10px;
+        }
+
+        img.logo {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TB Detection System by</h1>
+     <h1>Varshini, Bramha, Kishore</h1>
+    <img class="logo" src="{{ url_for('static', filename='images/gprelogo.png') }}" alt="GP Reddy Engineering College Logo">
+    {% if error %}
+        <p class="error">{{ error }}</p>
+    {% endif %}
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".png, .jpg, .jpeg" required>
+        <button type="submit">Predict</button>
+    </form>
+    {% if result %}
+        <p>Result: {{ result }}</p>
+        {% if file_path %}
+            <img class="uploaded-image" src="{{ url_for('static', filename=file_path) }}" alt="Uploaded Image">
+        {% endif %}
+    {% endif %}
+</body>
+</html>
