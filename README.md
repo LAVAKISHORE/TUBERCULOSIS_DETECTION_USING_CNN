@@ -54,7 +54,7 @@ The pipeline described in the project report is:
 6. **Save and reload the model** — the report specifies the filename `tbdetection.keras`.
 7. **Evaluate and visualise** — inspect validation accuracy, training history, and predictions for sample images.
 
-![Project workflow](docs/images/methodology-flow.png)
+![Project workflow](images/methodology-flow.png)
 
 ## Model and Training
 
@@ -90,7 +90,6 @@ The following documentation assets are included with this README:
 ```text
 .
 ├── README.md
-└── docs/
     └── images/
         ├── methodology-flow.png
         ├── training-accuracy-graph.jpg
@@ -102,18 +101,10 @@ The following documentation assets are included with this README:
         └── prediction-result-normal.jpg
 ```
 
-Your existing notebook, source code, model files, and dataset should remain in their current locations. This documentation package does not replace those project files.
 
 ## Setup
 
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/LAVAKISHORE/TUBERCULOSIS_DETECTION_USING_CNN.git
-cd TUBERCULOSIS_DETECTION_USING_CNN
-```
-
-### 2. Create a virtual environment (recommended)
+### 1. Create a virtual environment (recommended)
 
 **Windows:**
 
@@ -129,7 +120,7 @@ python3 -m venv .venv
 source .venv/bin/activate
 ```
 
-### 3. Install the Python libraries
+### 2. Install the Python libraries
 
 If the repository already contains a `requirements.txt`, install its pinned dependencies:
 
@@ -144,24 +135,6 @@ python -m pip install tensorflow pandas numpy matplotlib jupyter pillow
 ```
 
 > TensorFlow compatibility varies by Python version and operating system. If installation fails, check the TensorFlow installation guide and use a supported Python version.
-
-## Dataset Preparation
-
-The report describes two classes of chest X-ray images: **Normal** and **Tuberculosis**. It does not specify a single authoritative dataset download URL or exact directory names, so use the dataset already configured in the project notebook/code.
-
-A typical directory arrangement is:
-
-```text
-dataset/
-├── Normal/
-│   ├── normal_image_001.png
-│   └── ...
-└── Tuberculosis/
-    ├── tb_image_001.png
-    └── ...
-```
-
-If your code uses different directory names, update the paths in the notebook or source code accordingly. Do not commit private, sensitive, or unlicensed medical images to a public repository.
 
 ## Training and Evaluation
 
@@ -196,33 +169,33 @@ The report alone does not identify the web framework or its exact startup comman
 
 ### Training output
 
-![Training epoch output](docs/images/training-epoch-output.jpg)
+![Training epoch output](images/training-epoch-output.jpg)
 
 ### Training accuracy graph
 
-![Training accuracy graph](docs/images/training-accuracy-graph.jpg)
+![Training accuracy graph](images/training-accuracy-graph.jpg)
 
 ### Predictions on sample images
 
-![Random validation image predictions](docs/images/random-validation-predictions.jpg)
+![Random validation image predictions](images/random-validation-predictions.jpg)
 
 ### Web application
 
 **Home page**
 
-![Web interface home page](docs/images/web-interface-home.jpg)
+![Web interface home page](images/web-interface-home.jpg)
 
 **Input image selected**
 
-![Chest X-ray selected for prediction](docs/images/web-interface-xray-selected.jpg)
+![Chest X-ray selected for prediction](images/web-interface-xray-selected.jpg)
 
 **Prediction: Tuberculosis**
 
-![Tuberculosis prediction screen](docs/images/prediction-result-tuberculosis.jpg)
+![Tuberculosis prediction screen](images/prediction-result-tuberculosis.jpg)
 
 **Prediction: Normal**
 
-![Normal prediction screen](docs/images/prediction-result-normal.jpg)
+![Normal prediction screen](images/prediction-result-normal.jpg)
 
 The images above are taken from the supplied academic project report. They illustrate the reported workflow and interface; they are not a guarantee of clinical performance.
 
